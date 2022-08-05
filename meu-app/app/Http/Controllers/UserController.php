@@ -23,26 +23,19 @@ class UserController extends Controller
         return view('users.index', compact('users'));
     }
 
-    public function show($id)
-    {
-        if (!$user = User::find($id))
-            return redirect()->route('users.index');
+    // public function show($id)
+    // {
+    //     if (!$user = User::find($id))
+    //         return redirect()->route('users.index');
 
-        return view('users.show', compact('user'));
-    }
+    //     return view('users.show', compact('user'));
+    // }
     public function create() {
         return view('users.create');
     }
     public function store(Request $request)
     {
-        // dd($request->all());
-
-        // $user = new User;
-        // $user->name = $request->name;
-        // $user->email = $request->email;
-        // $user->password = bcrypt($request->password);
-        // $user->save();
-
+        //dd($request->all());
         $data = $request->all();
         
         $this->model->create($data);
