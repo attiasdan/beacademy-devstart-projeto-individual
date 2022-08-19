@@ -42,6 +42,13 @@ class UserController extends Controller
 
         return redirect()->route('users.index');
     }
+    public function edit($id)
+    {
+        if (!$user = $this->model->find($id))
+            return redirect()->route('users.index');
+
+        return view('users.edit', compact('user'));
+    }
     public function update(Request $request, $id)
     {
         if (!$user = $this->model->find($id))
@@ -52,6 +59,15 @@ class UserController extends Controller
             $data['password'] = bcrypt($request->password);
         
         $user->update($data);
+
+        return redirect()->route('users.index');
+    }
+    public function destroy($id)
+    {
+        if(!$user = $this->model->find($id))
+            return redirect()->route('users.index');
+
+        $user->delete();
 
         return redirect()->route('users.index');
     }
