@@ -35,7 +35,6 @@ class UserController extends Controller
     }
     public function store(Request $request)
     {
-        //dd($request->all());
         $data = $request->all();
         
         $this->model->create($data);
@@ -55,8 +54,6 @@ class UserController extends Controller
             return redirect()->route('users.index');
 
         $data = $request->only('name', 'email');
-        if ($request->password)
-            $data['password'] = bcrypt($request->password);
         
         $user->update($data);
 
