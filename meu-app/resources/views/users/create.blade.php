@@ -25,10 +25,6 @@
             <label for="nivel" class="form-label">Nível</label>
             <input type="text" name="nivel" id="nivel" class="form-control">
         </div>
-        {{-- <div class="mb-3">
-            <label for="password" class="form-label">Senha</label>
-            <input type="password" name="password" id="password" class="form-control">
-        </div> --}}
         <button type="submit" class="btn btn-primary">CADASTRAR</button>
 
     </form>
