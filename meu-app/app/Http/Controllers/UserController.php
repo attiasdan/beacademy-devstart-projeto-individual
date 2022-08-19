@@ -22,14 +22,6 @@ class UserController extends Controller
 
         return view('users.index', compact('users'));
     }
-
-    // public function show($id)
-    // {
-    //     if (!$user = User::find($id))
-    //         return redirect()->route('users.index');
-
-    //     return view('users.show', compact('user'));
-    // }
     public function create() {
         return view('users.create');
     }
@@ -53,7 +45,6 @@ class UserController extends Controller
         if (!$user = $this->model->find($id))
             return redirect()->route('users.index');
 
-        // $data = $request->only('name', 'email');
         $data = $request->all();
         
         $user->update($data);
