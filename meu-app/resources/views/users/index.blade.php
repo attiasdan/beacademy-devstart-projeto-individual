@@ -29,7 +29,7 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->area }}</td>
-                    <td>{{ $user->pretensao_salarial }}</td>
+                    <td>R$ {{ $user->pretensao_salarial }},00</td>
                     <td>{{ $user->nivel }}</td>
                     <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
                     <td>
