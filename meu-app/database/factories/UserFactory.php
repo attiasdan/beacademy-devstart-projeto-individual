@@ -20,7 +20,7 @@ class UserFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            'area' => $this->faker->name(),
+            'area' => $this->faker->randomElement($array = array ('Back-end','Front-end','Full-stack')),
             'pretensao_salarial' => ($this->faker->randomDigitNotZero()*1000),
             'nivel' => $this->faker->randomElement($array = array ('Júnior','Pleno','Sênior')),
             'email_verified_at' => now(),
