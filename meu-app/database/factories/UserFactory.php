@@ -22,7 +22,7 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail(),
             'area' => $this->faker->name(),
             'pretensao_salarial' => ($this->faker->randomDigitNotZero()*1000),
-            'nivel' => $this->faker->title(),
+            'nivel' => $this->faker->randomElement($array = array ('Júnior','Pleno','Sênior')),
             'email_verified_at' => now(),
             'remember_token' => Str::random(10)
         ];
